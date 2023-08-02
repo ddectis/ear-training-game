@@ -1,11 +1,15 @@
-import logo from './logo.svg';
+
 import './App.css';
-import ToneGenerator from './components/ToneGenerator'
+import IntervalGenerator from './components/IntervalGenerator'
+import DifficultySetter from './components/DifficultySetter'
 
 function App() {
   return (
       <div className="App">
-          <ToneGenerator />
+          <DifficultySetter />
+          <IntervalGenerator />
+          
+
       
     </div>
   );
