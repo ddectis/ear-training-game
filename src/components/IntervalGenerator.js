@@ -39,8 +39,9 @@ const IntervalGenerator = props => {
         console.log("Tone Generator Click. Difficulty: " + props.difficulty);
         const levelInfo = levels.Levels[props.difficulty - 1];
         console.log(levelInfo.intervals)
-        
-
+        props.setIsCorrect(false); //when the player generates a new interval, they have started a new round and they are no longer correct
+        props.setHasGuessed(false);
+        props.setOutcome("");
         const baseNote = 0; //this represents the first note of the interval;
 
         //this is a simple random int function we can call to get random ints
@@ -91,6 +92,7 @@ const IntervalGenerator = props => {
     return (
         <div>
             {!props.intervalActive && <button onClick={generateInterval} >Generate Interval</button>}
+            {props.isCorrect === true && <button onClick={generateInterval} >Generate New Interval</button>}
             {props.intervalActive && <button onClick={playInterval} >Replay Interval</button> }
             
         </div>

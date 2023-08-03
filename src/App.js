@@ -4,48 +4,100 @@ import IntervalGenerator from './components/IntervalGenerator'
 import DifficultySetter from './components/DifficultySetter'
 import GuessSetter from './components/GuessSetter'
 import GuessChecker from './components/GuessChecker'
+import StageInfo from './components/StageInfo'
+import StageManager from './components/StageManager'
 
 
 
 function App() {
 
     const [difficulty, setDifficulty] = useState(1)
-    const [intervalActive, setIntervalActive] = useState(false)
+    const [isIntervalActive, setIsIntervalActive] = useState(false)
     const [interval, setInterval] = useState();
-    const [guess, setGuess] = useState(0);
+    const [guess, setGuess] = useState(12);
     const [hasGuessed, setHasGuessed] = useState(false);
-    //make a state variable here to say when the player has made a guess and then make it so that if they've guessed, they maybe see a button to generate a new interval or whatever
+    const [outcome, setOutcome] = useState("not guessed")
+    const [isCorrect, setIsCorrect] = useState(false);
+    const [stageNumber, setStageNumber] = useState(0);
+    const [correctCount, setCorrectCount] = useState(0);
+    const [incorrectCount, setIncorrectCount] = useState(0);
+    const [totalCorrectCount, setTotalCorrectCount] = useState(0);
+
+    
 
   return (
       <div className="App">
-          <DifficultySetter
+          <h1>Dectronica Ear Training</h1>
+          {!isIntervalActive && <DifficultySetter
               difficulty={difficulty}
               setDifficulty={setDifficulty}
+          />}
+
+          {isIntervalActive && <StageInfo
+              difficulty={difficulty}
+              stageNumber={stageNumber}
+              correctCount={correctCount}
+              incorrectCount={incorrectCount}
+              totalCorrectCount={totalCorrectCount}
+          />}
+
+          <StageManager
+              correctCount={correctCount}
+              setCorrectCount={setCorrectCount}
+              incorrectCount={incorrectCount}
+              setIncorrectCount={setIncorrectCount}
+              stageNumber={stageNumber}
+              setStageNumber={setStageNumber}
+              difficulty={difficulty}
+              setDifficulty={setDifficulty}
+
+
           />
+
           <IntervalGenerator
               difficulty={difficulty}
               interval={interval}
               setInterval={setInterval}
-              intervalActive={intervalActive}
-              setIntervalActive={setIntervalActive}
+              intervalActive={isIntervalActive}
+              setIntervalActive={setIsIntervalActive}
+              hasGuessed={hasGuessed}
+              setHasGuessed={setHasGuessed}
+              outcome={outcome}
+              setOutcome={setOutcome}
+              isCorrect={isCorrect}
+              setIsCorrect={setIsCorrect}
           />
-          <GuessSetter
+
+          {isIntervalActive && <GuessSetter
               difficulty={difficulty}
               guess={guess}
               setGuess={setGuess}
-              intervalActive={intervalActive}
-              setIntervalActive={setIntervalActive}
+              intervalActive={isIntervalActive}
+              setIntervalActive={setIsIntervalActive}
               hasGuessed={hasGuessed}
               setHasGuessed={setHasGuessed}
-          />
-          <GuessChecker
+              className="slider"
+          />}
+
+          {isIntervalActive && <GuessChecker
               interval={interval}
               guess={guess}
-              intervalActive={intervalActive}
-              setIntervalActive={setIntervalActive}
+              intervalActive={isIntervalActive}
+              setIntervalActive={setIsIntervalActive}
               hasGuessed={hasGuessed}
               setHasGuessed={setHasGuessed}
-          />
+              outcome={outcome}
+              setOutcome={setOutcome}
+              isCorrect={isCorrect}
+              setIsCorrect={setIsCorrect}
+              correctCount={correctCount}
+              setCorrectCount={setCorrectCount}
+              incorrectCount={incorrectCount}
+              setIncorrectCount={setIncorrectCount}
+              totalCorrectCount={totalCorrectCount}
+              setTotalCorrectCount={setTotalCorrectCount}
+          />}
+          
       
     </div>
   );

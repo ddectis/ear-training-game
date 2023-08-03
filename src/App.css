@@ -1,6 +1,40 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;1,400&display=swap');
 
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    background: #282c34
+}
+
+.App {
+    text-align: center;
+    font-family: 'Figtree', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #c3ffc8;
 }
 
 .App-logo {
@@ -27,6 +61,91 @@
 
 .App-link {
   color: #61dafb;
+}
+
+p{
+
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+}
+
+    /***** Track Styles *****/
+    /***** Chrome, Safari, Opera, and Edge Chromium *****/
+    input[type="range"]::-webkit-slider-runnable-track {
+        background-color: #c3ffc8;
+        height: 0.5rem;
+        border-radius: 10px;
+    }
+
+    /******** Firefox ********/
+    input[type="range"]::-moz-range-track {
+        background: #c3ffc8;
+        height: 0.5rem;
+        border-radius: 10px;
+    }
+
+    /***** Thumb Styles *****/
+    /***** Chrome, Safari, Opera, and Edge Chromium *****/
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        margin-top: -12px; /* Centers thumb on the track */
+        background-color: #cbcbcb;
+        height: 2rem;
+        width: 1rem;
+        border:4px double black;
+    }
+
+.slider {
+    width: 80%;
+    margin-block:10px;
+        
+}
+
+.guess {
+    border: black 10px double;
+    padding: 10px;
+    padding-inline: 20px;
+    border-radius: 50px;
+    margin-block: 10px;
+    background: #c3ffc8;
+    color: #282c34;
+}
+
+
+
+.slider-holder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.difficulty-container {
+    max-width: 80%;
+    margin-block: 10px;
+}
+
+.difficulty-selector {
+    border: 1px solid black;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    border-radius:20px;
+    padding:10px;
+    padding-inline:20px;
+    font-weight:bold;
+    box-shadow:0 0 black;
+    background:#cbcbcb
 }
 
 @keyframes App-logo-spin {

@@ -14,23 +14,27 @@ const GuessChecker = props => {
         
 
         if (props.guess === props.interval) {
-            correct = true;
-            result = "correct! :)"
-            
+            props.setIsCorrect(true)
+            result = "Result: correct! :)"
+            props.setOutcome(result)
+            props.setCorrectCount(props.correctCount + 1)
+            props.setTotalCorrectCount(props.totalCorrectCount + 1)
             console.log(result);
-            console.log(correct)
+
         } else {
-    
+            props.setIsCorrect(false)
             
-            result = "wrong :("
+            result = "Result: wrong :("
+            props.setOutcome(result)
+            props.setIncorrectCount(props.incorrectCount + 1)
             console.log(result)
         }
     };
 
     return (
         <div>
-            {!correct && <button onClick={handleSubmit} >Submit Guess</button>}
-            <p>Result: {result}</p>
+            {!props.isCorrect && <button onClick={handleSubmit} >Submit Guess</button>}
+            <p>{props.outcome}</p>
         </div>
     );
 };

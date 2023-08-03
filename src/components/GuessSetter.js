@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import data from '../json/notes.json'
 
 const GuessSetter = props => {
@@ -20,16 +19,20 @@ const GuessSetter = props => {
     //})
 
     return (
-        <div>
-
+        <div className="slider-holder">
+            <p>Drag the slider to select an interval to guess</p>
             <input
                 type="range"
                 min="1"
                 max={levelInfo.intervals.length}
                 onChange={handleChange}
-                defaultValue ="12"
+                defaultValue="12"
+                className="slider"
+                
             />
-            <p>Guess: {intervalNames[props.guess - 1]}</p>
+            <div className="guess">
+                <h2>{intervalNames[props.guess - 1]}</h2> <p>{props.guess} Half {props.guess > 1 ? "Steps" : "Step"}</p>
+            </div>
             
         </div>
         )

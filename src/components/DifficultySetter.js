@@ -16,8 +16,11 @@ const DifficultySetter = props => {
     }, [props.difficulty]);
 
     return (
-        <div>
-            <p>Select Difficulty</p>
+        <div className="difficulty-container">
+            
+            <p>Select Difficulty Level</p>
+            <p>Get 5 right in a row right advance to the next difficulty stage</p>
+            <div className="difficulty-selector">
             {
                 levelInfo.map((level, index) => {
                     return (
@@ -32,7 +35,8 @@ const DifficultySetter = props => {
                         </div>
                         )
                 })
-            }
+                }
+            </div>
         </div>
         )
 }
