@@ -16,7 +16,7 @@ const StageInfo = props => {
                         <p>Cleared <br/> {props.correctCount} / 5 </p>
                         <p>Mistakes <br/> {props.incorrectCount}</p>
                         <br />
-                        <p><b>Total Cleared:<br/> {props.totalCorrectCount}</b></p>
+                        <p><b>Total Cleared: {props.totalCorrectCount}</b></p>
                     </div>
                 
                 
