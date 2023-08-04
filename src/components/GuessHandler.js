@@ -25,11 +25,11 @@ const GuessHandler = props => {
 
     const handleSubmit = () => {
         console.log("submitting guess: " + props.guess + " Interval is: " + props.interval);
-
+        props.setHasGuessed(true)
 
         if (props.guess === props.interval) {
             props.setIsCorrect(true)
-            result = `Correct! <br/> The answer was ${intervalNames[props.guess - 1]}`
+            result = `Correct! The answer was ${intervalNames[props.guess - 1]}`
             props.setOutcome(result)
             props.setCorrectCount(props.correctCount + 1)
             props.setTotalCorrectCount(props.totalCorrectCount + 1)
@@ -39,7 +39,7 @@ const GuessHandler = props => {
         } else {
             props.setIsCorrect(false)
 
-            result = `Incorrect. <br/> You guessed ${intervalNames[props.guess - 1]}.`
+            result = `Incorrect. You guessed ${intervalNames[props.guess - 1]}.`
             props.setOutcome(result)
             props.setIncorrectCount(props.incorrectCount + 1)
             console.log(result)
@@ -53,19 +53,17 @@ const GuessHandler = props => {
 
             </button>
             <div className="subtext">Click to guess</div>
-            <p>Drag the slider to select an interval to guess</p>
+            
             <input
                 type="range"
                 min="1"
                 max={levelInfo.intervals.length}
                 onChange={handleChange}
                 defaultValue="12"
-                className="slider"
-                
-                
+                className="slider" 
             />
-           
-            
+
+            <p>Drag the slider to select an interval to guess</p>
         </div>
         )
 }

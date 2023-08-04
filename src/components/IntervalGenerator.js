@@ -36,7 +36,7 @@ let secondNote
 
 const IntervalGenerator = props => {
 
-    const [delay, setDelay] = useState(0);
+    const [delay, setDelay] = useState(500);
 
     const generateInterval = () => {
         console.log("Tone Generator Click. Difficulty: " + props.difficulty + " Challenge mode: " + props.isChallengeMode);
@@ -47,15 +47,10 @@ const IntervalGenerator = props => {
         props.setOutcome("");
         let baseNote = 0; //this represents the first note of the interval;
 
-
-
-
         //this is a simple random int function we can call to get random ints
         const getRandomInt = max => {
             return Math.floor(Math.random() * max)
         }
-
-
 
         let rnd = 0;
         let secondNoteFileNumber = 0;
@@ -78,8 +73,6 @@ const IntervalGenerator = props => {
 
         }
 
-
-        
         randomizeSecondNote();
 
         //create audio objects that point to the mp3 files
@@ -101,7 +94,9 @@ const IntervalGenerator = props => {
         //lower the volume because my samples are very loud, so playing 2 of them together will cause clipping
         firstNote.volume = 0.5;
         secondNote.volume = 0.5;
-
+        firstNote.load();
+        secondNote.load();
+  
         //play the first note of the interval
         firstNote.play();
         setTimeout(() => {
@@ -112,14 +107,16 @@ const IntervalGenerator = props => {
 
 
     return (
-        <div class="options-holder">
+        <div className="options-holder">
             {props.intervalActive && <DelayToggle
                 delay={delay}
                 setDelay={setDelay}
             /> }
             {!props.intervalActive && <button onClick={generateInterval} ><h2>Start!</h2></button>}
-            {props.isCorrect === true && <button onClick={generateInterval} >Continue to Next Interval</button>}
-            {props.intervalActive && <button onClick={playInterval} >Play Interval Again</button> }
+            <div className="continue-or-play-again">
+                {props.intervalActive && <button className="margin-block-10" onClick={playInterval} >Play Interval Again</button>}
+                {props.isCorrect === true && <button className="margin-block-10" onClick={generateInterval} >Continue to Next Interval</button>}
+            </div>
             
         </div>
         )

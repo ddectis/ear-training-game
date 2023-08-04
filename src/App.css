@@ -46,9 +46,11 @@ body {
     justify-content: space-evenly;
     max-height: 1000px;
     border: 1px solid #c3ffc8;
-    border-radius:50px;
-    padding:20px;
-    margin-top:10px;
+    border-radius: 50px;
+    padding: 20px;
+    margin-top: 10px;
+    width: 95%;
+    box-shadow: 4px 7px 13px 0px black;
 }
 
 .App-logo {
@@ -65,11 +67,11 @@ body {
 .introduction {
     width: 95%;
     padding: 20px;
-
-    border-radius: 50px;
+    border-radius: 150px;
     margin: 18px;
     color: #282c34;
     background-color: #c3ffc8;
+    box-shadow: 4px 7px 13px 0px black;
 }
 
 .App-header {
@@ -156,6 +158,7 @@ a {
     padding-inline:20px;
     padding-block:10px;
     margin-block:10px;
+    width:100%;
 }
 
 .results-holder {
@@ -253,21 +256,23 @@ input[type="range"] {
 
 .difficulty-selector {
     border: 1px solid #c3ffc8;
-    border-radius: 50px;
+    border-radius: 25px;
     padding-block: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-block:10px;
-    min-height:100px;
-    justify-content:center;
+    margin-block: 10px;
+    min-height: 100px;
+    justify-content: center;
+    box-shadow: 4px 7px 13px 0px black;
 }
 
 .difficulty-option {
     display: flex;
     justify-content: space-between;
-    width:75%;
+    width:90%;
+
 }
 
 #challenge-selector label{
@@ -286,7 +291,8 @@ button {
     font-weight: bold;
     font-size: 1.1em;
     box-shadow: 0 0 black;
-    background: #c3ffc8
+    background: #c3ffc8;
+    
 }
 
 .justify-content-center{
@@ -297,14 +303,23 @@ button {
     justify-content: space-between;
 }
 
-.flex-column{
-    flex-direction:column;
+.continue-or-play-again {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.flex-column {
+    flex-direction: column;
 }
 
 .height100{
     height:100%;
 }
 
+.margin-block-10{
+    margin-block:10px;
+}
 
 
 .color-reset {
@@ -321,7 +336,12 @@ button {
 }
 
 .font-weight-100{
-    font-weight:100;
+    font-weight:200;
+}
+
+.inverse-colors {
+    color: #282c34;
+    background: #c3ffc8;
 }
 
 .active{

@@ -22,18 +22,19 @@ const DelayToggle = props => {
     return (
         <div className="options-holder">
             <p>Play Notes of Interval:</p>
-            <button
-                id="no-delay"
-                onClick={handleChange}
-            >
-                <p className="subtext">Together</p>
-            </button>
-            <button
+            <button className="active"
                 id="delay"
                 onClick={handleChange}
             >
                 <p className="subtext">Delayed</p>
             </button>
+            <button 
+                id="no-delay"
+                onClick={handleChange}
+            >
+                <p className="subtext">Together</p>
+            </button>
+            
         </div>
         )
 }
