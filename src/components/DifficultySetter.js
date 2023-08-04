@@ -6,9 +6,14 @@ const DifficultySetter = props => {
     const levelInfo = levels.Levels;
 
 
-    const handleDifficultyToggle = level => {
-        props.setDifficulty(level)
-
+    const handleDifficultyToggle = (event) => {
+        props.setDifficulty(event.currentTarget.id)
+        const difficultyOptions = document.querySelectorAll(".difficulty-option")
+        difficultyOptions.forEach(option => {
+            option.classList.remove("active")
+        }) 
+        event.currentTarget.classList.add("active")
+        console.log(event.target.id)
     }
 
     const handleChallegeModeToggle = ({ target }) => {
@@ -27,28 +32,34 @@ const DifficultySetter = props => {
             <div className="difficulty-selector">
             {
                 levelInfo.map((level, index) => {
+                    const levelId = level.number
+                    let addOnFirstIndexValue = ""
+                    if (index === 0) {
+                        addOnFirstIndexValue = "active"
+                    }
+                    const classList = `difficulty-option font-size-1em font-weight-100 ${addOnFirstIndexValue}`
                     return (
-                        <div className="difficulty-option">
-                            <p>{level.number}</p><label> {level.description} </label>
-                            <input
-                                type="radio"
-                                name="difficulty"
-                                value={level.number}
-                                onChange={() => handleDifficultyToggle(level.number)}
-                            />
-                        </div>
+                        <button
+                            className={classList}
+                            id={levelId}
+                            onClick={handleDifficultyToggle}
+                        >
+                            
+                            <p>{level.number}</p><p> {level.description} </p>
+                            
+                        </button>
                         )
                 })
                 }
             </div>
 
             <div className="difficulty-selector">
-                <div className="difficulty-option justify-content-center">
+                <div className="difficulty-option justify-content-center" id="challenge-selector">
                     <input type="checkbox" id="use-different-starting-notes" onChange={handleChallegeModeToggle} />
-                    <label htmlFor="use-different-starting-notes"><u><b>Challenge Mode:</b></u> Random starting note</label>
+                    <label htmlFor="use-different-starting-notes"><u><b>Challenge Mode:</b></u><br/> Random starting note</label>
                     
                 </div>
-                <br/><p className="subtext">Challenge Mode is enabled automatically after Stage 5.</p>
+                <br/><p className="subtext max-width75">Challenge Mode is enabled automatically after Stage 5.</p>
             </div>
         </div>
         )

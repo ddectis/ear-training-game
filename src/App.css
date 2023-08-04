@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
 html {
     box-sizing: border-box;
@@ -18,7 +18,7 @@ html {
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;
-    font-weight: normal;
+
 }
 
 ol, ul {
@@ -43,7 +43,7 @@ body {
     color: #c3ffc8;
     max-width: 600px;
     position: absolute;
-    height: 100vh;
+    
     justify-content: space-evenly;
     max-height:1000px;
 }
@@ -65,7 +65,7 @@ body {
     border: 1px solid #c3ffc8;
     border-radius: 50px;
     margin: 18px;
-    font-size:1.2em;
+
 }
 
 .App-header {
@@ -96,11 +96,11 @@ body {
 }
 
 h1{
-    font-size:2.5em;
+    font-size:2em;
 }
 
 h2{
-    font-size:2em;
+    font-size:1.4em;
 }
 
 a {
@@ -114,8 +114,8 @@ a {
     padding-inline:10px;
     padding-block:5px;
     margin-block:20px;
-    width:100%;
-    border-radius:33px;
+    width:98%;
+    border-radius:25px;
     display:flex;
     flex-direction:row;
     align-items:center;
@@ -123,7 +123,7 @@ a {
 }
 
 .stage-info {
-    padding: 10px;
+    
     width: 100%;
     border-radius: 50px;
     display: flex;
@@ -143,6 +143,7 @@ a {
     display:flex;
     justify-content: center;
     align-items: center;
+    font-size:0.9em;
 }
 
 input[type="range"] {
@@ -222,7 +223,7 @@ input[type="range"] {
 
 .difficulty-container {
 
-    margin-block: 10px;
+
     width: 97%;
     display:flex;
     flex-direction:column;
@@ -248,12 +249,21 @@ input[type="range"] {
     width:75%;
 }
 
+#challenge-selector label{
+    padding-inline:20px;
+}
+
+#use-different-starting-notes{
+    width:25px;
+    border-radius:100px;
+}
+
 button {
     border-radius: 20px;
     padding: 10px;
     padding-inline: 20px;
     font-weight: bold;
-    font-size:1.1em;
+    font-size: 1.1em;
     box-shadow: 0 0 black;
     background: #c3ffc8
 }
@@ -274,12 +284,30 @@ button {
     height:100%;
 }
 
+
+
 .color-reset {
     color: #c3ffc8;
     background: #282c34;
 }
 
+.max-width75{
+    max-width:75%;
+}
 
+.font-size-1em{
+   font-size:1em;
+}
+
+.font-weight-100{
+    font-weight:100;
+}
+
+.active{
+    text-decoration:underline;
+    font-size:1.1em;
+    font-weight:bold;
+}
 
 @keyframes App-logo-spin {
   from {

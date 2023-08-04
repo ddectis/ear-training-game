@@ -47,6 +47,11 @@ const GuessHandler = props => {
 
     return (
         <div className="slider-holder">
+            <button className="guess" onClick={handleSubmit}>
+                <h2>{intervalNames[props.guess - 1]}</h2> <p>{props.guess} Half {props.guess > 1 ? "Steps" : "Step"}</p>
+
+            </button>
+            <div className="subtext">Click to guess</div>
             <p>Drag the slider to select an interval to guess</p>
             <input
                 type="range"
@@ -55,13 +60,10 @@ const GuessHandler = props => {
                 onChange={handleChange}
                 defaultValue="12"
                 className="slider"
+                value={props.guess}
                 
             />
-            <button className="guess" onClick={handleSubmit}>
-                <h2>{intervalNames[props.guess - 1]}</h2> <p>{props.guess} Half {props.guess > 1 ? "Steps" : "Step"}</p>
-
-            </button>
-            <div className="subtext">Click to guess</div>
+           
             
         </div>
         )
