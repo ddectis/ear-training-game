@@ -45,6 +45,7 @@ body {
     position: absolute;
     height: 100vh;
     justify-content: space-evenly;
+    max-height:1000px;
 }
 
 .App-logo {
@@ -98,6 +99,10 @@ h1{
     font-size:2.5em;
 }
 
+h2{
+    font-size:2em;
+}
+
 a {
     color: inherit;
     font-weight: bold;
@@ -107,13 +112,14 @@ a {
 .stage-info-holder{
     border: 1px solid #c3ffc8;
     padding-inline:10px;
-    padding-block:15px;
+    padding-block:5px;
     margin-block:20px;
     width:100%;
-    border-radius:50px;
+    border-radius:33px;
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     align-items:center;
+
 }
 
 .stage-info {
@@ -122,8 +128,21 @@ a {
     border-radius: 50px;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-around;
+}
+
+.stage-info p{
+    background: #c3ffc8;
+    color: #282c34;
+    border-radius:50px;
+    padding-block:5px;
+    padding-inline:25px;
+    margin-block:2px;
+    height: 30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input[type="range"] {
@@ -204,7 +223,7 @@ input[type="range"] {
 .difficulty-container {
 
     margin-block: 10px;
-    width: 100%;
+    width: 97%;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -242,6 +261,25 @@ button {
 .justify-content-center{
     justify-content:center;
 }
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.flex-column{
+    flex-direction:column;
+}
+
+.height100{
+    height:100%;
+}
+
+.color-reset {
+    color: #c3ffc8;
+    background: #282c34;
+}
+
+
 
 @keyframes App-logo-spin {
   from {

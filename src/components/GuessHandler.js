@@ -61,7 +61,7 @@ const GuessHandler = props => {
                 <h2>{intervalNames[props.guess - 1]}</h2> <p>{props.guess} Half {props.guess > 1 ? "Steps" : "Step"}</p>
 
             </button>
-            <p className="subtext">Click to guess</p>
+            <div className="subtext">Click to guess</div>
             
         </div>
         )

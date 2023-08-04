@@ -14,13 +14,12 @@ const StageManager = props => {
             props.setDifficulty(props.difficulty + 1)
         } else {
             console.log("already at max difficulty!")
+            props.setIsChallengeMode(true);
         }
 
         props.setCorrectCount(0)
         
     }
-
-
 
 }
 

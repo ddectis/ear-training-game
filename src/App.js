@@ -17,7 +17,7 @@ function App() {
     const [interval, setInterval] = useState();
     const [guess, setGuess] = useState(12);
     const [hasGuessed, setHasGuessed] = useState(false);
-    const [outcome, setOutcome] = useState("not guessed")
+    const [outcome, setOutcome] = useState("")
     const [isCorrect, setIsCorrect] = useState(false);
     const [stageNumber, setStageNumber] = useState(0);
     const [correctCount, setCorrectCount] = useState(0);
@@ -44,6 +44,7 @@ function App() {
               correctCount={correctCount}
               incorrectCount={incorrectCount}
               totalCorrectCount={totalCorrectCount}
+              isChallengeMode={isChallengeMode}
           />}
 
           <StageManager
@@ -55,6 +56,8 @@ function App() {
               setStageNumber={setStageNumber}
               difficulty={difficulty}
               setDifficulty={setDifficulty}
+              isChallengeMode={isChallengeMode}
+              setIsChallengeMode={setIsChallengeMode}
           />
 
           <OutcomePrinter

@@ -1,17 +1,27 @@
+import data from '../json/notes.json'
+
 const StageInfo = props => {
 
 
     return (
         <div className="stage-info-holder">
-            <h2><b>Stage #{props.difficulty}</b></h2>
-            <div className="stage-info">
-                <div>
-                    <p>Cleared: {props.correctCount} / 5 </p>
-                    <p>Mistakes: {props.incorrectCount}</p>
-                </div>
+            <div className="stage-info flex-column height100 justify-content-space-between">
+                <h2><b><u>Stage {props.difficulty} / {data.Levels.length}</u></b></h2>
                 
-                <p>Total Cleared: {props.totalCorrectCount}</p>
+                {props.isChallengeMode && <p><i>Challenge Mode!</i></p> }
+
             </div>
+                <div className="stage-info">
+                    <div>
+                        <p>Cleared: {props.correctCount} / 5 </p>
+                        <p>Mistakes: {props.incorrectCount}</p>
+                        <br />
+                        <p><b>Total Cleared: {props.totalCorrectCount}</b></p>
+                    </div>
+                
+                
+                </div>
+            
         </div>
             
         ) 
