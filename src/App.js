@@ -2,16 +2,17 @@ import React, { useState } from 'react'
 import './App.css';
 import IntervalGenerator from './components/IntervalGenerator'
 import DifficultySetter from './components/DifficultySetter'
-import GuessSetter from './components/GuessSetter'
-import GuessChecker from './components/GuessChecker'
+import GuessHandler from './components/GuessHandler'
 import StageInfo from './components/StageInfo'
 import StageManager from './components/StageManager'
 import Introduction from './components/Introduction'
+import OutcomePrinter from './components/OutcomePrinter'
 
 
 function App() {
 
     const [difficulty, setDifficulty] = useState(1)
+    const [isChallengeMode, setIsChallengeMode] = useState(false);
     const [isIntervalActive, setIsIntervalActive] = useState(false)
     const [interval, setInterval] = useState();
     const [guess, setGuess] = useState(12);
@@ -22,7 +23,7 @@ function App() {
     const [correctCount, setCorrectCount] = useState(0);
     const [incorrectCount, setIncorrectCount] = useState(0);
     const [totalCorrectCount, setTotalCorrectCount] = useState(0);
-    const [showGuessSetter, setShowGuessSetter] = useState(true)
+    const [showGuessSetter, setShowGuessSetter] = useState(false)
 
 
 
@@ -33,6 +34,8 @@ function App() {
           {!isIntervalActive && <DifficultySetter
               difficulty={difficulty}
               setDifficulty={setDifficulty}
+              isChallengeMode={isChallengeMode}
+              setIsChallengeMode={setIsChallengeMode}
           />}
 
           {isIntervalActive && <StageInfo
@@ -52,8 +55,10 @@ function App() {
               setStageNumber={setStageNumber}
               difficulty={difficulty}
               setDifficulty={setDifficulty}
+          />
 
-
+          <OutcomePrinter
+              outcome={outcome}
           />
 
           <IntervalGenerator
@@ -69,9 +74,10 @@ function App() {
               isCorrect={isCorrect}
               setIsCorrect={setIsCorrect}
               setShowGuessSetter={setShowGuessSetter}
+              isChallengeMode={isChallengeMode}
           />
 
-          {showGuessSetter && <GuessSetter
+          {showGuessSetter && <GuessHandler
               difficulty={difficulty}
               guess={guess}
               interval={interval}

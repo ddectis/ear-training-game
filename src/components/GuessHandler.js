@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import data from '../json/notes.json'
 
-const GuessSetter = props => {
+const GuessHandler = props => {
 
     const levelInfo = data.Levels[props.difficulty - 1];
     const intervalNames = data.IntervalNames;
@@ -28,7 +28,7 @@ const GuessSetter = props => {
 
         if (props.guess === props.interval) {
             props.setIsCorrect(true)
-            result = "Result: correct! :)"
+            result = "Correct!! :)"
             props.setOutcome(result)
             props.setCorrectCount(props.correctCount + 1)
             props.setTotalCorrectCount(props.totalCorrectCount + 1)
@@ -38,7 +38,7 @@ const GuessSetter = props => {
         } else {
             props.setIsCorrect(false)
 
-            result = "Result: wrong :("
+            result = "Wrong, please try again"
             props.setOutcome(result)
             props.setIncorrectCount(props.incorrectCount + 1)
             console.log(result)
@@ -59,11 +59,12 @@ const GuessSetter = props => {
             />
             <button className="guess" onClick={handleSubmit}>
                 <h2>{intervalNames[props.guess - 1]}</h2> <p>{props.guess} Half {props.guess > 1 ? "Steps" : "Step"}</p>
-                <p>Click to guess</p>
+
             </button>
+            <p className="subtext">Click to guess</p>
             
         </div>
         )
 }
 
-export default GuessSetter;
+export default GuessHandler;

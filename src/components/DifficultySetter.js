@@ -6,14 +6,18 @@ const DifficultySetter = props => {
     const levelInfo = levels.Levels;
 
 
-    const handleChange = level => {
+    const handleDifficultyToggle = level => {
         props.setDifficulty(level)
 
     }
 
+    const handleChallegeModeToggle = ({ target }) => {
+        props.setIsChallengeMode(!props.isChallengeMode)
+    }
+
+
     useEffect(() => {
-        //console.log(props.difficulty);
-    }, [props.difficulty]);
+    }, [props.difficulty, props.isChallengeMode]);
 
     return (
         <div className="difficulty-container">
@@ -30,12 +34,21 @@ const DifficultySetter = props => {
                                 type="radio"
                                 name="difficulty"
                                 value={level.number}
-                                onChange={() => handleChange(level.number)}
+                                onChange={() => handleDifficultyToggle(level.number)}
                             />
                         </div>
                         )
                 })
                 }
+            </div>
+
+            <div className="difficulty-selector">
+                <div className="difficulty-option justify-content-center">
+                    <input type="checkbox" id="use-different-starting-notes" onChange={handleChallegeModeToggle} />
+                    <label htmlFor="use-different-starting-notes"><u><b>Challenge Mode:</b></u> Random starting note</label>
+                    
+                </div>
+                <br/><p className="subtext">Challenge Mode is enabled automatically after Stage 5.</p>
             </div>
         </div>
         )
