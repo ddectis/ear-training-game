@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import levels from '../json/notes.json'
+import DelayToggle from './DelayToggle'
 
 const noteNamesSharp = [
     'C',
@@ -34,6 +36,7 @@ let secondNote
 
 const IntervalGenerator = props => {
 
+    const [delay, setDelay] = useState(0);
 
     const generateInterval = () => {
         console.log("Tone Generator Click. Difficulty: " + props.difficulty + " Challenge mode: " + props.isChallengeMode);
@@ -103,11 +106,17 @@ const IntervalGenerator = props => {
         firstNote.play();
         setTimeout(() => {
             secondNote.play(); //then play the second after a delay
-        }, 500) //the delay parameter in milliseconds
+        }, delay) //the delay parameter in milliseconds
     }
 
+
+
     return (
-        <div>
+        <div class="options-holder">
+            {props.intervalActive && <DelayToggle
+                delay={delay}
+                setDelay={setDelay}
+            /> }
             {!props.intervalActive && <button onClick={generateInterval} ><h2>Start!</h2></button>}
             {props.isCorrect === true && <button onClick={generateInterval} >Continue to Next Interval</button>}
             {props.intervalActive && <button onClick={playInterval} >Play Interval Again</button> }

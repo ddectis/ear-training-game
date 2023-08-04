@@ -3,6 +3,7 @@ import data from '../json/notes.json'
 
 const GuessHandler = props => {
 
+
     const levelInfo = data.Levels[props.difficulty - 1];
     const intervalNames = data.IntervalNames;
     //console.log(intervalNames);
@@ -28,7 +29,7 @@ const GuessHandler = props => {
 
         if (props.guess === props.interval) {
             props.setIsCorrect(true)
-            result = "Correct!! :)"
+            result = `Correct! <br/> The answer was ${intervalNames[props.guess - 1]}`
             props.setOutcome(result)
             props.setCorrectCount(props.correctCount + 1)
             props.setTotalCorrectCount(props.totalCorrectCount + 1)
@@ -38,7 +39,7 @@ const GuessHandler = props => {
         } else {
             props.setIsCorrect(false)
 
-            result = "Wrong, please try again"
+            result = `Incorrect. <br/> You guessed ${intervalNames[props.guess - 1]}.`
             props.setOutcome(result)
             props.setIncorrectCount(props.incorrectCount + 1)
             console.log(result)
@@ -60,7 +61,7 @@ const GuessHandler = props => {
                 onChange={handleChange}
                 defaultValue="12"
                 className="slider"
-                value={props.guess}
+                
                 
             />
            

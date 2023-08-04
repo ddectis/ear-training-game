@@ -43,9 +43,11 @@ body {
     color: #c3ffc8;
     max-width: 600px;
     position: absolute;
-    
     justify-content: space-evenly;
-    max-height:1000px;
+    max-height: 1000px;
+    border: 1px solid #c3ffc8;
+    border-radius:50px;
+    padding:20px;
 }
 
 .App-logo {
@@ -62,10 +64,11 @@ body {
 .introduction {
     width: 95%;
     padding: 20px;
-    border: 1px solid #c3ffc8;
+
     border-radius: 50px;
     margin: 18px;
-
+    color: #282c34;
+    background-color: #c3ffc8;
 }
 
 .App-header {
@@ -144,6 +147,23 @@ a {
     justify-content: center;
     align-items: center;
     font-size:0.9em;
+}
+
+.options-holder {
+    border: 1px solid #c3ffc8;
+    border-radius:30px;
+    padding-inline:20px;
+    padding-block:10px;
+    margin-block:10px;
+}
+
+.results-holder {
+    border: 1px solid #c3ffc8;
+    border-radius: 30px;
+    padding-inline: 20px;
+    padding-block: 10px;
+    margin-block: 10px;
+    width:100%;
 }
 
 input[type="range"] {

@@ -1,6 +1,7 @@
 import levels from '../json/notes.json'
 import React, { useEffect } from 'react';
 
+
 const DifficultySetter = props => {
     //console.log(levels.Levels)
     const levelInfo = levels.Levels;

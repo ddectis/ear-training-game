@@ -1,6 +1,8 @@
 const OutcomePrinter = props => {
     return (
-        <h1>{props.outcome}</h1>
+        <div className="results-holder">
+            <h1>{props.outcome}</h1>
+        </div>
         )
 }
 

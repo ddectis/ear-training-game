@@ -60,9 +60,9 @@ function App() {
               setIsChallengeMode={setIsChallengeMode}
           />
 
-          <OutcomePrinter
+          {hasGuessed && <OutcomePrinter
               outcome={outcome}
-          />
+          /> }
 
           <IntervalGenerator
               difficulty={difficulty}
