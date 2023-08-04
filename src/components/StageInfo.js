@@ -2,11 +2,16 @@ const StageInfo = props => {
 
 
     return (
-        <div>
-            <p>Level #{props.difficulty}</p>
-            <p>Stage Cleared: {props.correctCount} / 5 </p>
-            <p>Mistakes: {props.incorrectCount} / 3</p>
-            <p>Total Cleared: {props.totalCorrectCount}</p>
+        <div className="stage-info-holder">
+            <h2><b>Stage #{props.difficulty}</b></h2>
+            <div className="stage-info">
+                <div>
+                    <p>Cleared: {props.correctCount} / 5 </p>
+                    <p>Mistakes: {props.incorrectCount}</p>
+                </div>
+                
+                <p>Total Cleared: {props.totalCorrectCount}</p>
+            </div>
         </div>
             
         ) 

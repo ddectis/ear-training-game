@@ -6,7 +6,7 @@ import GuessSetter from './components/GuessSetter'
 import GuessChecker from './components/GuessChecker'
 import StageInfo from './components/StageInfo'
 import StageManager from './components/StageManager'
-
+import Introduction from './components/Introduction'
 
 
 function App() {
@@ -22,12 +22,14 @@ function App() {
     const [correctCount, setCorrectCount] = useState(0);
     const [incorrectCount, setIncorrectCount] = useState(0);
     const [totalCorrectCount, setTotalCorrectCount] = useState(0);
+    const [showGuessSetter, setShowGuessSetter] = useState(true)
 
-    
+
 
   return (
       <div className="App">
           <h1>Dectronica Ear Training</h1>
+          {!isIntervalActive && <Introduction />}
           {!isIntervalActive && <DifficultySetter
               difficulty={difficulty}
               setDifficulty={setDifficulty}
@@ -66,26 +68,19 @@ function App() {
               setOutcome={setOutcome}
               isCorrect={isCorrect}
               setIsCorrect={setIsCorrect}
+              setShowGuessSetter={setShowGuessSetter}
           />
 
-          {isIntervalActive && <GuessSetter
+          {showGuessSetter && <GuessSetter
               difficulty={difficulty}
               guess={guess}
+              interval={interval}
               setGuess={setGuess}
               intervalActive={isIntervalActive}
               setIntervalActive={setIsIntervalActive}
               hasGuessed={hasGuessed}
               setHasGuessed={setHasGuessed}
               className="slider"
-          />}
-
-          {isIntervalActive && <GuessChecker
-              interval={interval}
-              guess={guess}
-              intervalActive={isIntervalActive}
-              setIntervalActive={setIsIntervalActive}
-              hasGuessed={hasGuessed}
-              setHasGuessed={setHasGuessed}
               outcome={outcome}
               setOutcome={setOutcome}
               isCorrect={isCorrect}
@@ -96,7 +91,10 @@ function App() {
               setIncorrectCount={setIncorrectCount}
               totalCorrectCount={totalCorrectCount}
               setTotalCorrectCount={setTotalCorrectCount}
+              setShowGuessSetter={setShowGuessSetter}
           />}
+
+         
           
       
     </div>

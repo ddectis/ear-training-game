@@ -55,7 +55,7 @@ const IntervalGenerator = props => {
             //get a random int to determine what the second note of the interval should be
             rnd = getRandomInt(levelInfo.intervals.length)
             console.log("Second Interval: " + levelInfo.intervals[rnd]);
-            if (rnd === lastNumber && props.difficulty !== 1) {
+            if (rnd === lastNumber) {
                 console.log("rerolling number because 2nd interval was the same as the last one")
                 randomizeSecondNote();
             }
@@ -70,7 +70,8 @@ const IntervalGenerator = props => {
         props.setInterval(levelInfo.intervals[rnd])
         playInterval(firstNote, secondNote);
         
-        
+        props.setShowGuessSetter(true);
+
         lastNumber = rnd;
         props.setIntervalActive(true);
     }
@@ -91,9 +92,9 @@ const IntervalGenerator = props => {
 
     return (
         <div>
-            {!props.intervalActive && <button onClick={generateInterval} >Generate Interval</button>}
-            {props.isCorrect === true && <button onClick={generateInterval} >Generate New Interval</button>}
-            {props.intervalActive && <button onClick={playInterval} >Replay Interval</button> }
+            {!props.intervalActive && <button onClick={generateInterval} ><h2>Start!</h2></button>}
+            {props.isCorrect === true && <button onClick={generateInterval} >Continue to Next Interval</button>}
+            {props.intervalActive && <button onClick={playInterval} >Play Interval Again</button> }
             
         </div>
         )

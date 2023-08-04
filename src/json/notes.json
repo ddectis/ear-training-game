@@ -2,15 +2,7 @@
   "Levels": [
     {
       "number": 1,
-      "description": "Perfect 5th and Octave",
-      "intervals": [
-        7,
-        12
-      ]
-    },
-    {
-      "number": 2,
-      "description": "Perfect 4th + 5th and Octave",
+      "description": "4th + 5th and Octave",
       "intervals": [
         5,
         7,
@@ -18,7 +10,7 @@
       ]
     },
     {
-      "number": 3,
+      "number": 2,
       "description": "3rds, 4th + 5th and Octave",
       "intervals": [
         3,
@@ -29,20 +21,18 @@
       ]
     },
     {
-      "number": 4,
+      "number": 3,
       "description": "6ths and 7ths and Octave",
       "intervals": [
         8,
         9,
         10,
         11,
-        9,
-        11,
         12
       ]
     },
     {
-      "number": 5,
+      "number": 4,
       "description": "Diatonic Octave",
       "intervals": [
         2,
@@ -55,7 +45,7 @@
       ]
     },
     {
-      "number": 6,
+      "number": 5,
       "description": "Chromatic Octave",
       "intervals": [
         1,

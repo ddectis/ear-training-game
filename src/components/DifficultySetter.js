@@ -18,14 +18,14 @@ const DifficultySetter = props => {
     return (
         <div className="difficulty-container">
             
-            <p>Select Difficulty Level</p>
-            <p>Get 5 right in a row right advance to the next difficulty stage</p>
+            <h2>Select Difficulty Level</h2>
+
             <div className="difficulty-selector">
             {
                 levelInfo.map((level, index) => {
                     return (
-                        <div>
-                            <label>#{level.number}) {level.description} </label>
+                        <div className="difficulty-option">
+                            <p>{level.number}</p><label> {level.description} </label>
                             <input
                                 type="radio"
                                 name="difficulty"

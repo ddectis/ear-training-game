@@ -9,6 +9,12 @@ html {
     box-sizing: inherit;
 }
 
+#root {
+    display: flex;
+    justify-content: center;
+
+}
+
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;
@@ -35,6 +41,9 @@ body {
     flex-direction: column;
     align-items: center;
     color: #c3ffc8;
+    max-width:600px;
+    position:absolute;
+    top: 5%;
 }
 
 .App-logo {
@@ -46,6 +55,14 @@ body {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.introduction {
+    width: 95%;
+    padding: 20px;
+    border: 1px solid #c3ffc8;
+    border-radius: 50px;
+    margin: 18px;
 }
 
 .App-header {
@@ -63,8 +80,44 @@ body {
   color: #61dafb;
 }
 
+.submit-button{
+    padding-inline:100px;
+}
+
 p{
 
+}
+
+h1{
+    font-size:2.5em;
+}
+
+a {
+    color: inherit;
+    font-weight: bold;
+
+}
+
+.stage-info-holder{
+    border: 1px solid #c3ffc8;
+    padding-inline:10px;
+    padding-block:15px;
+    margin-block:20px;
+    width:100%;
+    border-radius:50px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.stage-info {
+    padding: 10px;
+    width: 100%;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
 }
 
 input[type="range"] {
@@ -116,6 +169,11 @@ input[type="range"] {
     margin-block: 10px;
     background: #c3ffc8;
     color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:85%;
+    margin-bottom:15px;
 }
 
 
@@ -125,27 +183,51 @@ input[type="range"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #c3ffc8;
+    border-radius:50px;
+    
+    margin-block:10px;
 }
 
+    .slider-holder p {
+        max-width: 66%;
+        padding-top: 10px;
+    }
+
 .difficulty-container {
-    max-width: 80%;
+
     margin-block: 10px;
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 .difficulty-selector {
-    border: 1px solid black;
-    align-items: flex-end;
+    border: 1px solid #c3ffc8;
+    border-radius: 50px;
+    padding-block: 10px;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
 }
 
-button{
-    border-radius:20px;
-    padding:10px;
-    padding-inline:20px;
-    font-weight:bold;
-    box-shadow:0 0 black;
-    background:#cbcbcb
+.difficulty-option {
+    display: flex;
+    justify-content: space-between;
+    width:75%;
+}
+
+button {
+    border-radius: 20px;
+    padding: 10px;
+    padding-inline: 20px;
+    font-weight: bold;
+    font-size:1.1em;
+    box-shadow: 0 0 black;
+    background: #c3ffc8
 }
 
 @keyframes App-logo-spin {

@@ -20,6 +20,7 @@ const GuessChecker = props => {
             props.setCorrectCount(props.correctCount + 1)
             props.setTotalCorrectCount(props.totalCorrectCount + 1)
             console.log(result);
+            props.setShowGuessSetter(false);
 
         } else {
             props.setIsCorrect(false)
@@ -33,7 +34,7 @@ const GuessChecker = props => {
 
     return (
         <div>
-            {!props.isCorrect && <button onClick={handleSubmit} >Submit Guess</button>}
+            {!props.isCorrect && <button className="submit-button" onClick={handleSubmit} >Submit Guess</button>}
             <p>{props.outcome}</p>
         </div>
     );
