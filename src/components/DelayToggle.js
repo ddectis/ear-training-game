@@ -21,7 +21,8 @@ const DelayToggle = props => {
 
     return (
         <div className="options-holder">
-            <p>Play Notes of Interval:</p>
+            <p><b><u>Option:</u></b> Play Notes of Interval:</p>
+            <br/>
             <button className="active"
                 id="delay"
                 onClick={handleChange}

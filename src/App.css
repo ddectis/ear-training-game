@@ -119,11 +119,11 @@ a {
     border: 1px solid #c3ffc8;
     padding-inline:10px;
     padding-block:5px;
-    margin-block:20px;
+    margin-block:5px;
     width:98%;
     border-radius:25px;
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     align-items:center;
 
 }
@@ -150,6 +150,7 @@ a {
     justify-content: center;
     align-items: center;
     font-size:0.9em;
+    width:100%;
 }
 
 .options-holder {
@@ -290,9 +291,8 @@ button {
     padding-inline: 20px;
     font-weight: bold;
     font-size: 1.1em;
-    box-shadow: 0 0 black;
+    box-shadow: 3px 4px 9px 0px black;
     background: #c3ffc8;
-    
 }
 
 .justify-content-center{
@@ -331,6 +331,10 @@ button {
     max-width:75%;
 }
 
+.width100{
+    width:100%
+}
+
 .font-size-1em{
    font-size:1em;
 }
@@ -342,6 +346,10 @@ button {
 .inverse-colors {
     color: #282c34;
     background: #c3ffc8;
+}
+
+.inverse-inverse-colors{
+
 }
 
 .active{

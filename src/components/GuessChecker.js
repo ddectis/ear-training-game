@@ -33,10 +33,12 @@ const GuessChecker = props => {
     };
 
     return (
-        <div>
-            {!props.isCorrect && <button className="submit-button" onClick={handleSubmit} >Submit Guess</button>}
-            <p>{props.outcome}</p>
-        </div>
+
+            <button className="guess" onClick={props.checkGuess}>
+                <h2>{props.intervalNames[props.guess - 1]}</h2> <p>{props.guess} Half {props.guess > 1 ? "Steps" : "Step"}</p>
+
+            </button>
+ 
     );
 };
 

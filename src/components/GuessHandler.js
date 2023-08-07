@@ -1,16 +1,17 @@
 import { useEffect } from 'react'
 import data from '../json/notes.json'
+import GuessChecker from './GuessChecker'
 
 const GuessHandler = props => {
 
-
+    
     const levelInfo = data.Levels[props.difficulty - 1];
     const intervalNames = data.IntervalNames;
     //console.log(intervalNames);
 
     //console.log(levelInfo)
 
-    const handleChange = event => {
+    const setGuess = event => {
         //console.log("I'm changing!" + event.target.value)
 
         props.setGuess(levelInfo.intervals[event.target.value - 1])
@@ -23,9 +24,10 @@ const GuessHandler = props => {
         // This will run every time the component mounts or the state of the component changes, or when result changes.
     }, [props.guess, props.interval, result, correct]);
 
-    const handleSubmit = () => {
+    const checkGuess = () => {
         console.log("submitting guess: " + props.guess + " Interval is: " + props.interval);
         props.setHasGuessed(true)
+        props.setTotalAttemptedCount(props.totalAttemptedCount + 1)
 
         if (props.guess === props.interval) {
             props.setIsCorrect(true)
@@ -44,21 +46,25 @@ const GuessHandler = props => {
             props.setIncorrectCount(props.incorrectCount + 1)
             console.log(result)
         }
+
+        props.setGuess(12);
     };
 
     return (
         <div className="slider-holder">
-            <button className="guess" onClick={handleSubmit}>
-                <h2>{intervalNames[props.guess - 1]}</h2> <p>{props.guess} Half {props.guess > 1 ? "Steps" : "Step"}</p>
-
-            </button>
+            <GuessChecker
+                guess={props.guess}
+                checkGuess={checkGuess}
+                intervalNames={intervalNames}
+            />
+            
             <div className="subtext">Click to guess</div>
             
             <input
                 type="range"
                 min="1"
                 max={levelInfo.intervals.length}
-                onChange={handleChange}
+                onChange={setGuess}
                 defaultValue="12"
                 className="slider" 
             />
