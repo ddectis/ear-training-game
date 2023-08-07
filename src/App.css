@@ -385,6 +385,14 @@ button {
     background: #c3ffc8;
 }
 
+.flex{
+    display:flex;
+}
+
+.align-items-center{
+    align-items:center;
+}
+
 .border-radius-50{
     border-radius:50px;
 }
