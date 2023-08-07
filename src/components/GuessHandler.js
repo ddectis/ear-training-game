@@ -4,8 +4,6 @@ import GuessChecker from './GuessChecker'
 
 const GuessHandler = props => {
 
-    
-    const levelInfo = data.Levels[props.difficulty - 1];
     const intervalNames = data.IntervalNames;
     //console.log(intervalNames);
 
@@ -14,7 +12,7 @@ const GuessHandler = props => {
     const setGuess = event => {
         //console.log("I'm changing!" + event.target.value)
 
-        props.setGuess(levelInfo.intervals[event.target.value - 1])
+        props.setGuess(props.sandboxInfo.intervals[event.target.value - 1])
     }
 
     let result = "";
@@ -57,21 +55,21 @@ const GuessHandler = props => {
                 checkGuess={checkGuess}
                 intervalNames={intervalNames}
             />
-            
+
             <div className="subtext">Click to guess</div>
-            
+
             <input
                 type="range"
                 min="1"
-                max={levelInfo.intervals.length}
+                max={props.levelInfo.intervals.length}
                 onChange={setGuess}
                 defaultValue="12"
-                className="slider" 
+                className="slider"
             />
 
             <p>Drag the slider to select an interval to guess</p>
         </div>
-        )
+    )
 }
 
 export default GuessHandler;

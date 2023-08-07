@@ -36,7 +36,7 @@ let secondNote
 
 const IntervalGenerator = props => {
 
-    const [delay, setDelay] = useState(500);
+
 
     const generateInterval = () => {
         console.log("Tone Generator Click. Difficulty: " + props.difficulty + " Challenge mode: " + props.isChallengeMode);
@@ -101,7 +101,7 @@ const IntervalGenerator = props => {
         firstNote.play();
         setTimeout(() => {
             secondNote.play(); //then play the second after a delay
-        }, delay) //the delay parameter in milliseconds
+        }, props.delay) //the delay parameter in milliseconds
     }
 
 
@@ -109,8 +109,8 @@ const IntervalGenerator = props => {
     return (
         <div className="options-holder">
             {props.intervalActive && <DelayToggle
-                delay={delay}
-                setDelay={setDelay}
+                delay={props.delay}
+                setDelay={props.setDelay}
             /> }
             {!props.intervalActive && <button onClick={generateInterval} ><h2>Start!</h2></button>}
             <div className="continue-or-play-again">

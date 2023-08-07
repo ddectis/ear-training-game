@@ -8,6 +8,7 @@ import StageManager from './components/StageManager'
 import Introduction from './components/Introduction'
 import OutcomePrinter from './components/OutcomePrinter'
 import Sandbox from './components/Sandbox.js'
+import data from './json/notes.json'
 
 
 function App() {
@@ -27,11 +28,17 @@ function App() {
     const [totalAttemptedCount, setTotalAttemptedCount] = useState(0);
     const [showGuessSetter, setShowGuessSetter] = useState(false)
     const [isSandboxMode, setIsSandboxMode] = useState(false);
+    const [sandboxInterval, setSandboxInterval] = useState(12);
+    const [delay, setDelay] = useState(500);
+
+    const levelInfo = data.Levels[difficulty - 1];
+    const sandboxInfo = data.Levels[data.Levels.length - 1]
+    const intervalNames = data.IntervalNames;
 
 
   return (
       <div className="App">
-          {!isSandboxMode && (<div>
+          {!isSandboxMode && (<div className="width100">
               <h1>Dectronica Ear Training</h1>
 
               {!isIntervalActive && <Introduction
@@ -87,9 +94,12 @@ function App() {
                   setIsCorrect={setIsCorrect}
                   setShowGuessSetter={setShowGuessSetter}
                   isChallengeMode={isChallengeMode}
+                  delay={delay}
+                  setDelay={setDelay}
               />
-
+              
               {showGuessSetter && <GuessHandler
+                  levelInfo={levelInfo}
                   difficulty={difficulty}
                   guess={guess}
                   interval={interval}
@@ -117,6 +127,14 @@ function App() {
           {isSandboxMode && <Sandbox
               isSandboxMode={isSandboxMode}
               setIsSandboxMode={setIsSandboxMode}
+              levelInfo={levelInfo}
+              setGuess={setGuess}
+              intervalNames={intervalNames}
+              sandboxInterval={sandboxInterval}
+              setSandboxInterval={setSandboxInterval}
+              sandboxInfo={sandboxInfo}
+              delay={delay}
+              setDelay={setDelay}
             />}
       
     </div>

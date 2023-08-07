@@ -1,6 +1,6 @@
 const DelayToggle = props => {
 
-    const handleChange = ({ currentTarget })=> {
+    const toggleDelay = ({ currentTarget })=> {
         const delayButton = document.querySelector("#delay")
         const noDelayButton = document.querySelector("#no-delay")
         
@@ -25,13 +25,13 @@ const DelayToggle = props => {
             <br/>
             <button className="active"
                 id="delay"
-                onClick={handleChange}
+                onClick={toggleDelay}
             >
                 <p className="subtext">Delayed</p>
             </button>
             <button 
                 id="no-delay"
-                onClick={handleChange}
+                onClick={toggleDelay}
             >
                 <p className="subtext">Together</p>
             </button>
