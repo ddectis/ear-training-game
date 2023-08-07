@@ -31,7 +31,7 @@ const DelayToggle = props => {
     return (
         
         <div className="options-holder flex flex-column">
-            <div><button className="unset-background unset-border unset-shadow unset-color width-100" onClick={toggleOptionsVisible}><p>Options {optionsButtonText}</p></button></div>
+            <div><button className="unset-background unset-border unset-shadow unset-color width100" onClick={toggleOptionsVisible}><p>Options {optionsButtonText}</p></button></div>
             {areOptionsVisible && <div>
                 <p>Play Notes of Interval:</p>
                 <br />
