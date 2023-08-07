@@ -12,7 +12,7 @@ const GuessHandler = props => {
     const setGuess = event => {
         //console.log("I'm changing!" + event.target.value)
 
-        props.setGuess(props.sandboxInfo.intervals[event.target.value - 1])
+        props.setGuess(props.levelInfo.intervals[event.target.value - 1])
     }
 
     let result = "";
@@ -35,6 +35,7 @@ const GuessHandler = props => {
             props.setTotalCorrectCount(props.totalCorrectCount + 1)
             console.log(result);
             props.setShowGuessSetter(false);
+            props.setGuess(12);
 
         } else {
             props.setIsCorrect(false)
@@ -45,7 +46,7 @@ const GuessHandler = props => {
             console.log(result)
         }
 
-        props.setGuess(12);
+        
     };
 
     return (

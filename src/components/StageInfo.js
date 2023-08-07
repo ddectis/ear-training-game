@@ -25,7 +25,7 @@ const StageInfo = props => {
                         </div>                
                 </div>
                 <div className="stage-info-holder">
-                    <p><b>Status: {props.totalCorrectCount} / {props.totalAttemptedCount} or {successPercentage}%</b> </p>
+                    <p><b>Overall: {props.totalCorrectCount} / {props.totalAttemptedCount} or {successPercentage}%</b> </p>
                     <p><b></b></p>
 
                 </div>
