@@ -36,8 +36,6 @@ let secondNote
 
 const IntervalGenerator = props => {
 
-
-
     const generateInterval = () => {
         console.log("Tone Generator Click. Difficulty: " + props.difficulty + " Challenge mode: " + props.isChallengeMode);
         const levelInfo = levels.Levels[props.difficulty - 1];
@@ -114,7 +112,7 @@ const IntervalGenerator = props => {
             /> }
             {!props.intervalActive && <button onClick={generateInterval} ><h2>Start!</h2></button>}
             <div className="continue-or-play-again">
-                {props.intervalActive && <button className="margin-block-10" onClick={playInterval} >Play Interval Again</button>}
+                {props.intervalActive && <button className="margin-block-10 bold" onClick={playInterval} >Play Interval Again</button>}
                 {props.isCorrect === true && <button className="margin-block-10" onClick={generateInterval} >Continue to Next Interval</button>}
             </div>
             

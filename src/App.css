@@ -319,7 +319,7 @@ button {
     border-radius: 20px;
     padding: 10px;
     padding-inline: 20px;
-    font-weight: bold;
+    
     font-size: 1.1em;
     box-shadow: 3px 4px 9px 0px black;
     background: #c3ffc8;
@@ -401,7 +401,25 @@ button {
 
 }
 
+.bold{
+    font-weight:bold;
+}
 
+.unset-background{
+    background:unset;
+}
+
+.unset-border{
+    border:unset;
+}
+
+.unset-shadow{
+    box-shadow:unset;
+}
+
+.unset-color{
+    color: unset;
+}
 
 .active{
     text-decoration:underline;

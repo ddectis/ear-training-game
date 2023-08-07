@@ -19,8 +19,8 @@ const StageInfo = props => {
                         
                     <div className="stage-info-holder width100">
                         <h2><b><u>Stage {props.difficulty} / {data.Levels.length}</u></b></h2>
-                            <p>Progress: {props.correctCount} / 5 </p>
-                            <p>Mistakes: {props.incorrectCount}</p>
+                            <p><u>Progress:</u> {props.correctCount} / 5 </p>
+                            <p><u>Mistakes:</u> {props.incorrectCount}</p>
                             
                         </div>                
                 </div>
