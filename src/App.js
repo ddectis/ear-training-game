@@ -38,7 +38,7 @@ function App() {
 
   return (
       <div className="App">
-          {!isSandboxMode && (<div className="width100 display-flex flex-column align-items-start">
+          {!isSandboxMode && (<div className="width100 flex flex-column align-items-center">
               <h1>Dectronica Ear Training</h1>
 
               {!isIntervalActive && <Introduction
