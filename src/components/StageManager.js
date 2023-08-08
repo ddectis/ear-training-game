@@ -8,7 +8,7 @@ const StageManager = props => {
 
     },[props.correctCount])
 
-    if (props.correctCount === 2) {
+    if (props.correctCount === 5) {
         console.log("going to next stage!")
         if (props.difficulty < data.Levels.length) {
             props.setDifficulty(props.difficulty + 1)
