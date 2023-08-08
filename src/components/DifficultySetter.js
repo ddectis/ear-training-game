@@ -8,13 +8,13 @@ const DifficultySetter = props => {
 
 
     const handleDifficultyToggle = (event) => {
-        props.setDifficulty(event.currentTarget.id)
+        props.setDifficulty(parseInt(event.currentTarget.id))
         const difficultyOptions = document.querySelectorAll(".difficulty-option")
         difficultyOptions.forEach(option => {
             option.classList.remove("active")
         }) 
         event.currentTarget.classList.add("active")
-        console.log(event.target.id)
+        console.log(event.currentTarget.id)
     }
 
     const handleChallegeModeToggle = ({ target }) => {

@@ -35,7 +35,6 @@ function App() {
     const sandboxInfo = data.Levels[data.Levels.length - 1]
     const intervalNames = data.IntervalNames;
 
-
   return (
       <div className="App">
           {!isSandboxMode && (<div className="width100 flex flex-column align-items-center">
